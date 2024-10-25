@@ -247,8 +247,7 @@ svg {
 .back-to-top {
 	position: fixed;
 	bottom: 2rem;
-	/* Calculate right position: 50% of viewport - (210mm + 20px for button margin) */
-	right: calc(50% - 210mm / 2 - 20px);
+	right: calc(50% - 210mm / 2 + 20px);
 	z-index: 1000;
 	width: 40px;
 	height: 40px;
@@ -257,11 +256,15 @@ svg {
 	color: white;
 	border: none;
 	cursor: pointer;
-	display: none; /* Initially hidden */
+	display: none;
 	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
 	font-size: 20px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 .back-to-top:hover {
