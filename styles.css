@@ -1,0 +1,466 @@
+/* Comprehensive CSS Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Remove list styles */
+ol,
+ul {
+	list-style: circle;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+
+/* Hide scrollbar for all browsers */
+html {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+/* Remove default quotes for blockquotes and q elements */
+blockquote,
+q {
+	quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+	content: none;
+}
+
+/* Normalize anchor elements */
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+}
+
+a:hover {
+	color: rgba(0, 0, 0, 0.455);
+}
+
+a:active {
+	color: rgba(0, 0, 0, 0.455);
+}
+
+/* Remove border from images */
+img {
+	max-width: 100%;
+	display: block;
+	border-style: none;
+}
+
+/* Reset table styles */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+/* Set consistent font inheritance */
+body,
+input,
+textarea,
+button,
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+/* Reset form elements */
+button,
+input,
+select,
+textarea {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	font-family: inherit;
+}
+
+/* Set uniform styles for buttons */
+button {
+	cursor: pointer;
+}
+
+/* Make images responsive */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove default focus outline and customize focus state */
+:focus {
+	outline: 2px solid #000; /* Customize focus outline if desired */
+	outline-offset: 2px;
+}
+
+/* HTML5 block-level elements reset */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+	display: block;
+	overflow: hidden;
+}
+
+/* Reset `hidden` attribute */
+[hidden] {
+	display: none !important;
+}
+
+/* Normalize typography */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	background-color: #000000;
+	color: #333;
+	width: 100vw;
+	height: 100%;
+	position: relative;
+}
+
+/* Provide a base style for hr */
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+/* Address SVG color inheritance */
+svg {
+	fill: currentColor;
+}
+
+/* Reset default cursor */
+[disabled] {
+	cursor: not-allowed;
+}
+
+.line-breaker {
+	width: 100%;
+	height: 2px;
+	background-color: #ff0000;
+	margin: 15px 0;
+}
+
+/*********************************************/
+/*****************Page Styles*****************/
+/*********************************************/
+.page {
+	width: 90vw;
+	height: 297mm;
+	max-width: 210mm;
+	margin: 20px auto;
+	background-color: #fff;
+	box-shadow: #333 0px 0px 10px;
+	padding: 1in;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+#logo-section {
+	height: 80px;
+	background-color: rgb(255, 255, 255);
+	margin: -60px auto 30px auto;
+}
+
+#logos {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	height: 80px;
+}
+
+#logo1 {
+	width: 200px;
+	height: 100%;
+}
+
+#logo1 img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#logo2 {
+	width: 110px;
+	height: 100%;
+}
+
+#logo2 img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#logo3 {
+	width: 220px;
+	height: 100%;
+}
+
+#logo3 img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#enq-section {
+	margin-bottom: 10px;
+}
+
+#title-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+#title-section h1 {
+	margin-top: 50%;
+}
+
+/*Back To top Button*/
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	/* Calculate right position: 50% of viewport - (210mm + 20px for button margin) */
+	right: calc(50% - 210mm / 2 - 20px);
+	z-index: 1000;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #333;
+	color: white;
+	border: none;
+	cursor: pointer;
+	display: none; /* Initially hidden */
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	font-size: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+	background-color: #555;
+}
+
+/* When button is shown */
+.back-to-top.show {
+	display: block;
+	opacity: 1;
+}
+
+/* Ensure button stays within page bounds on smaller screens */
+@media screen and (max-width: 210mm) {
+	.back-to-top {
+		right: 20px; /* Fixed margin on smaller screens */
+	}
+}
+
+/*Typography*/
+h1 {
+	font-size: 14pt;
+	margin-bottom: 18pt;
+}
+
+h2,
+h3 {
+	font-size: 12pt;
+	margin-bottom: 12pt;
+}
+
+p,
+li {
+	font-size: 10pt;
+	margin-bottom: 12pt;
+	text-align: justify;
+	text-indent: inherit;
+	text-justify: inter-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-break: break-word;
+	line-height: 1.5;
+}
+
+/*Images Styles*/
+.content-holder {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	background-color: #ffffff4c;
+	padding: 10px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.image-holder {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.image-holder img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/*Table of Content Styles*/
+.toc-item ul li,
+li {
+	margin-bottom: 2px;
+}
+
+/*Tablet Screen size media query*/
+@media screen and (max-width: 768px) {
+	.page {
+		height: 90vh;
+		max-height: 297mm;
+		margin: 18px auto;
+		padding: 0.8in;
+		overflow: scroll;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.page::-webkit-scrollbar {
+		display: none;
+	}
+
+	#logo-section {
+		height: 80px;
+		background-color: rgb(255, 255, 255);
+		margin: -25px auto 15px auto;
+	}
+	#title-section h1 {
+		margin-top: 30%;
+		font-size: 16pt;
+		margin-bottom: 8pt;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 16pt;
+		margin-bottom: 8pt;
+	}
+
+	p,
+	li {
+		font-size: 10pt;
+		margin-bottom: 8pt;
+		line-height: 1.3;
+	}
+
+	#logos {
+		height: 70px;
+	}
+}
+
+/*Mobile screen size media query*/
+@media screen and (max-width: 480px) {
+	.page {
+		margin: 5vh auto;
+		padding: 0.2in;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-ms-border-radius: 20px;
+		-o-border-radius: 20px;
+		border-radius: 20px;
+	}
+
+	#logo-section {
+		height: 60px;
+		background-color: rgb(255, 255, 255);
+		margin: -4px auto 8px auto;
+	}
+
+	#title-section h1 {
+		margin-top: 50%;
+		font-size: 14pt;
+		margin-bottom: 4pt;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 12pt;
+		margin-bottom: 4pt;
+	}
+
+	h2,
+	h3 {
+		font-size: 10pt;
+		margin-bottom: 4pt;
+	}
+
+	p,
+	li {
+		font-size: 9pt;
+		margin-bottom: 4pt;
+		line-height: 1.4;
+		text-align: left;
+		text-indent: inherit;
+		text-justify: inter-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+		word-break: break-word;
+	}
+
+	.line-breaker {
+		width: 100%;
+		height: 1.5px;
+		background-color: #ff0000;
+	}
+
+	.image-holder {
+		width: 100%;
+		height: 150px;
+		overflow: hidden;
+	}
+
+	.image-holder img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-ms-border-radius: 20px;
+		-o-border-radius: 20px;
+	}
+}
